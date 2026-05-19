@@ -78,51 +78,51 @@
     <div class="wrap">
         <header class="site">
             <h1><a href="/">Weird <span class="accent">Data</span> Collections</a></h1>
-            <p class="tagline">A curated directory of unusual, top-level public datasets — the kind you'd never find via a generic search, but which power surprising work once you know they exist.</p>
+            <p class="tagline">There's a vast amount of strange, freely-downloadable data on the internet — paintings of horses, sightings of frogs, every earthquake in the past hour, scans of sixteenth-century maps. This is a list of the ones I keep coming back to.</p>
         </header>
 
-        <h2>Museums &amp; Cultural Heritage</h2>
+        <h2>Museums That Opened Their Vaults</h2>
         <ul class="collections">
-            <li class="has-detail"><a class="title" href="/datasets/met-museum-open-access/">Met Museum Open Access</a><span class="host">metmuseum.org</span><span class="desc">Every artwork in the Metropolitan Museum's collection, full metadata, released as CC0.</span></li>
-            <li><a class="title" href="https://www.si.edu/openaccess">Smithsonian Open Access</a><span class="host">si.edu</span><span class="desc">4.5M items across 21 museums and the National Zoo, all CC0 — paintings, fossils, spacecraft components.</span></li>
-            <li><a class="title" href="https://data.rijksmuseum.nl/">Rijksmuseum API</a><span class="host">data.rijksmuseum.nl</span><span class="desc">High-resolution scans and metadata for Vermeer, Rembrandt, and 700,000 other Dutch artifacts.</span></li>
-            <li><a class="title" href="https://github.com/MuseumofModernArt/collection">MoMA Collection</a><span class="host">github.com/MuseumofModernArt</span><span class="desc">MoMA's entire artwork + artist database, published as JSON and CSV in a public Git repo.</span></li>
+            <li class="has-detail"><a class="title" href="/datasets/met-museum-open-access/">Met Museum Open Access</a><span class="host">metmuseum.org</span><span class="desc">Every painting, sculpture, costume, and weapon the Met owns — half a million objects dropped into the public domain in 2017. You can grep the whole collection.</span></li>
+            <li><a class="title" href="https://www.si.edu/openaccess">Smithsonian Open Access</a><span class="host">si.edu</span><span class="desc">When a 175-year-old institution releases 4.5 million items as CC0, you get fossils next to spacecraft components next to portraits, all in one folder. This is that folder.</span></li>
+            <li><a class="title" href="https://data.rijksmuseum.nl/">Rijksmuseum API</a><span class="host">data.rijksmuseum.nl</span><span class="desc">Vermeer, Rembrandt, and 700,000 other Dutch artifacts at zoom-deep resolution. Don't expect to leave the site quickly once you start scrolling.</span></li>
+            <li><a class="title" href="https://github.com/MuseumofModernArt/collection">MoMA Collection</a><span class="host">github.com/MuseumofModernArt</span><span class="desc">MoMA put their entire artwork and artist database on GitHub. With version history. You can <code>git pull</code> modern art.</span></li>
         </ul>
 
-        <h2>Science &amp; Earth</h2>
+        <h2>Earth, Sky, and What's Below</h2>
         <ul class="collections">
-            <li><a class="title" href="https://opendata.cern.ch/">CERN Open Data</a><span class="host">opendata.cern.ch</span><span class="desc">Actual particle collision events from the Large Hadron Collider — the same data physicists publish papers from.</span></li>
-            <li><a class="title" href="https://www.gbif.org/">GBIF</a><span class="host">gbif.org</span><span class="desc">2.6 billion species occurrence records — every documented sighting of every catalogued organism on Earth.</span></li>
-            <li><a class="title" href="https://earthquake.usgs.gov/earthquakes/feed/">USGS Earthquake Feed</a><span class="host">earthquake.usgs.gov</span><span class="desc">Every earthquake worldwide, streamed as JSON within minutes of detection.</span></li>
-            <li><a class="title" href="https://data.nasa.gov/">NASA Open Data Portal</a><span class="host">data.nasa.gov</span><span class="desc">Telemetry, planetary imagery, exoplanet catalogs, and several thousand more datasets from every NASA mission.</span></li>
+            <li><a class="title" href="https://opendata.cern.ch/">CERN Open Data</a><span class="host">opendata.cern.ch</span><span class="desc">Actual collision events from the Large Hadron Collider — the same files physicists publish from. It's a few terabytes and it will not run on your laptop.</span></li>
+            <li><a class="title" href="https://www.gbif.org/">GBIF</a><span class="host">gbif.org</span><span class="desc">Every documented sighting of every catalogued organism, ever. 2.6 billion records. Where biologists go when they need to know if a species has shown up somewhere new.</span></li>
+            <li><a class="title" href="https://earthquake.usgs.gov/earthquakes/feed/">USGS Earthquake Feed</a><span class="host">earthquake.usgs.gov</span><span class="desc">A live JSON feed of every earthquake on Earth, updated within a minute of detection. Plug it into anything that needs to react to the planet moving.</span></li>
+            <li><a class="title" href="https://data.nasa.gov/">NASA Open Data Portal</a><span class="host">data.nasa.gov</span><span class="desc">Every NASA mission since forever, dumped into one searchable portal. Mars rover imagery, exoplanet catalogs, decades of climate-satellite data.</span></li>
         </ul>
 
-        <h2>Web, Language &amp; Knowledge</h2>
+        <h2>The Web, In Bulk</h2>
         <ul class="collections">
-            <li><a class="title" href="https://commoncrawl.org/">Common Crawl</a><span class="host">commoncrawl.org</span><span class="desc">Petabytes of the open web, re-crawled monthly — the corpus most modern language models start from.</span></li>
-            <li><a class="title" href="https://www.wikidata.org/">Wikidata</a><span class="host">wikidata.org</span><span class="desc">A structured knowledge graph linking every Wikipedia article — queryable via SPARQL, downloadable in full.</span></li>
-            <li><a class="title" href="https://archive.org/details/web">Internet Archive</a><span class="host">archive.org</span><span class="desc">Books, audio, video, software, and a near-complete archive of the public web going back to 1996.</span></li>
-            <li><a class="title" href="https://www.gutenberg.org/">Project Gutenberg</a><span class="host">gutenberg.org</span><span class="desc">Full text of 70,000+ public-domain books, downloadable as plain text and EPUB.</span></li>
+            <li><a class="title" href="https://commoncrawl.org/">Common Crawl</a><span class="host">commoncrawl.org</span><span class="desc">Most of the open web, re-downloaded monthly, hosted on S3 for anyone to use. This is what your favourite language model started life eating.</span></li>
+            <li><a class="title" href="https://www.wikidata.org/">Wikidata</a><span class="host">wikidata.org</span><span class="desc">Wikipedia's neglected sibling — a structured database of every entity in Wikipedia, queryable in SPARQL, downloadable in full. Once you start using it you wonder how you searched anything before.</span></li>
+            <li><a class="title" href="https://archive.org/details/web">Internet Archive</a><span class="host">archive.org</span><span class="desc">The Wayback Machine is just the front of the shop. Behind it: the largest privately-funded library on the planet — books, audio, video, software, web pages.</span></li>
+            <li><a class="title" href="https://www.gutenberg.org/">Project Gutenberg</a><span class="host">gutenberg.org</span><span class="desc">70,000+ public-domain books as plain text. The grandfather of all open-data projects, still going since 1971.</span></li>
         </ul>
 
-        <h2>Society, Maps &amp; Records</h2>
+        <h2>People, Places, and Public Records</h2>
         <ul class="collections">
-            <li><a class="title" href="https://www.gdeltproject.org/">GDELT</a><span class="host">gdeltproject.org</span><span class="desc">Every news event happening anywhere on the planet, tagged by actor, location, and tone — updated every 15 minutes.</span></li>
-            <li><a class="title" href="https://opencorporates.com/">OpenCorporates</a><span class="host">opencorporates.com</span><span class="desc">The largest open database of registered companies and their ownership, across 140+ jurisdictions.</span></li>
-            <li><a class="title" href="https://ourworldindata.org/">Our World in Data</a><span class="host">ourworldindata.org</span><span class="desc">Long-run development data — life expectancy since 1543, energy use since 1800, every metric carefully cited.</span></li>
-            <li><a class="title" href="https://planet.openstreetmap.org/">OpenStreetMap Planet</a><span class="host">planet.openstreetmap.org</span><span class="desc">The full vector map of Earth as a 150 GB file — every road, building, and bench on the planet.</span></li>
+            <li><a class="title" href="https://www.gdeltproject.org/">GDELT</a><span class="host">gdeltproject.org</span><span class="desc">Every news article published anywhere in the world, tagged by who, where, and what tone — refreshed every fifteen minutes. Try not to fall in.</span></li>
+            <li><a class="title" href="https://opencorporates.com/">OpenCorporates</a><span class="host">opencorporates.com</span><span class="desc">If a company has a registration number somewhere on Earth, it's probably in here. Useful for journalists; quietly alarming for anyone who searches their own name.</span></li>
+            <li><a class="title" href="https://ourworldindata.org/">Our World in Data</a><span class="host">ourworldindata.org</span><span class="desc">Long-run human-development data done properly — every chart sourced, every series downloadable, every claim checked. The bar this site sets is the bar.</span></li>
+            <li><a class="title" href="https://planet.openstreetmap.org/">OpenStreetMap Planet</a><span class="host">planet.openstreetmap.org</span><span class="desc">The entire vector map of Earth in one 150 GB file. Every road, every building, every park bench. You can host your own Google Maps from this.</span></li>
         </ul>
 
-        <h2>Curious &amp; Specialized</h2>
+        <h2>Odd, Wonderful, Specific</h2>
         <ul class="collections">
-            <li><a class="title" href="http://millionsongdataset.com/">Million Song Dataset</a><span class="host">millionsongdataset.com</span><span class="desc">Audio features and metadata for one million contemporary tracks — tempo, key, danceability, no audio itself.</span></li>
-            <li><a class="title" href="https://github.com/the-pudding/data">The Pudding Data</a><span class="host">github.com/the-pudding</span><span class="desc">Source datasets behind The Pudding's visual essays — hip-hop vocabularies, film dialogue gender splits, more.</span></li>
-            <li><a class="title" href="https://ourairports.com/data/">Our Airports</a><span class="host">ourairports.com</span><span class="desc">Every airport, heliport, and seaplane base on Earth — 79,000 rows, CSV, kept current by volunteers.</span></li>
-            <li><a class="title" href="https://www.davidrumsey.com/">David Rumsey Map Collection</a><span class="host">davidrumsey.com</span><span class="desc">100,000+ historic maps from the 16th century onward, high-res scans with full metadata.</span></li>
+            <li><a class="title" href="http://millionsongdataset.com/">Million Song Dataset</a><span class="host">millionsongdataset.com</span><span class="desc">A million tracks' worth of audio features — tempo, key, danceability, mood. No audio, just the numbers. A lot of music-information-retrieval research starts here.</span></li>
+            <li><a class="title" href="https://github.com/the-pudding/data">The Pudding Data</a><span class="host">github.com/the-pudding</span><span class="desc">Source datasets for The Pudding's visual essays. Hip-hop vocabularies, gendered film dialogue, the shape of a typical horror movie. Each one already comes with a story attached.</span></li>
+            <li><a class="title" href="https://ourairports.com/data/">Our Airports</a><span class="host">ourairports.com</span><span class="desc">Every airport, heliport, and seaplane base on Earth in a single CSV. Hand-maintained, kept current. A model of what an open dataset should look like.</span></li>
+            <li><a class="title" href="https://www.davidrumsey.com/">David Rumsey Map Collection</a><span class="host">davidrumsey.com</span><span class="desc">100,000 historic maps, scanned at the kind of resolution where you can read the engraver's signature. Pre-modern cartography as an internet rabbit hole.</span></li>
         </ul>
 
         <footer>
-            <p>Inclusion criterion: the dataset must be (1) freely downloadable or query-able, (2) genuinely top-level, not a sliver of someone else's archive, and (3) hard to stumble onto from a generic search. Suggestions welcome.</p>
+            <p>What makes the list: it has to be free to download or query, it has to be the real top-level archive (not a slice of someone else's), and it has to be something you wouldn't easily land on by typing "datasets" into Google. Got a favourite that fits? <a href="https://github.com/mishraawake/blogs/issues">Tell me</a>.</p>
         </footer>
     </div>
 </body>

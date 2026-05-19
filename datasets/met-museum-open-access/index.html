@@ -86,30 +86,30 @@
 
         <article>
             <h1>Met Museum Open Access</h1>
-            <p class="subtitle">The Metropolitan Museum of Art's entire collection — ~492,000 objects, full metadata, high-resolution images — released to the public domain.</p>
+            <p class="subtitle">The entire collection of one of the world's biggest museums, exposed as a 290 MB CSV. You can grep it, plot it, train a model on it. None of it requires attribution.</p>
 
             <table class="facts">
                 <tr><th>Maintained by</th><td>The Metropolitan Museum of Art</td></tr>
-                <tr><th>Released</th><td>February 2017 (continuously updated)</td></tr>
-                <tr><th>Size</th><td>~492,000 object records; CSV file ~290 MB</td></tr>
-                <tr><th>License</th><td>CC0 1.0 Universal (public domain dedication)</td></tr>
-                <tr><th>Formats</th><td>CSV (bulk), JSON (per-object via REST API)</td></tr>
-                <tr><th>Includes images?</th><td>Yes — for the public-domain subset (about 80% of objects)</td></tr>
-                <tr><th>API rate limit</th><td>80 requests / second, no auth required</td></tr>
+                <tr><th>Released</th><td>February 2017, updated weekly since</td></tr>
+                <tr><th>Size</th><td>Around 492,000 objects; the CSV is about 290 MB</td></tr>
+                <tr><th>License</th><td>CC0 1.0 — public domain, no attribution required</td></tr>
+                <tr><th>Formats</th><td>CSV for bulk work, JSON via a REST API for live queries</td></tr>
+                <tr><th>Images included?</th><td>Yes, for roughly 80% of objects (those flagged public-domain)</td></tr>
+                <tr><th>API auth</th><td>None. Rate limit is generous (80 requests / second).</td></tr>
             </table>
 
-            <h3>What's in it</h3>
-            <p>Every catalogued object in the Met's collection — paintings, sculpture, textiles, weapons, musical instruments, photographs, drawings, prints, costumes, decorative arts — exposed as a structured record. Each row has more than 50 fields: object ID, title, culture, period, artist, medium, dimensions, credit line, geographic origin, and where in the museum it lives. For roughly 80% of objects flagged "Public Domain," the full-resolution image is also released as CC0 and can be downloaded and reused without attribution.</p>
+            <h3>What you're getting</h3>
+            <p>Every catalogued object the Met holds: paintings, sculpture, textiles, weapons, musical instruments, photographs, prints, costumes, the decorative arts — about half a million records, give or take depending on the week. Each row has over fifty fields, from the obvious ones (title, artist, year) to the surprisingly granular (which gallery the object is installed in, the exact credit line printed under it, the regional culture it came from). For most objects, the high-resolution image is included too — you can download a sixty-megapixel scan of <em>Wheat Field with Cypresses</em> and do whatever you want with it.</p>
 
-            <h3>Why it's unusual</h3>
-            <p>Most museum APIs are partial, watermark images, or restrict re-use. The Met went the other direction: full collection, full metadata, full-resolution images, no attribution required, no commercial restriction. The CSV is a flat file you can grep. The API is unauthenticated. The license is the strongest open license that exists. For a 150-year-old institution holding objects valued in the billions, that's a uniquely radical commitment to open data.</p>
+            <h3>Why this one is special</h3>
+            <p>Most museums treat their collection like the family jewels: a handful of items photographed for press releases, the rest behind a paywall, with watermarks on anything you can see. The Met went the other direction in 2017 and just gave it all away. The metadata, the images, the API access. No attribution required. No commercial restriction. For a 150-year-old institution holding objects worth billions of dollars, that was a pretty radical thing to do — and other museums have been quietly copying the model ever since (the Smithsonian, the Art Institute of Chicago, Cleveland, all came later).</p>
 
-            <h3>How to access</h3>
-            <p><strong>Bulk download (CSV):</strong> the canonical source is the <a href="https://github.com/metmuseum/openaccess">metmuseum/openaccess</a> repo on GitHub. Clone or download:</p>
+            <h3>How to get at it</h3>
+            <p>Two ways in. For bulk work, grab the CSV from GitHub. It's a flat file — <code>awk</code> it, <code>pandas</code> it, drop it into SQLite, whatever suits you:</p>
             <pre><code>curl -O https://github.com/metmuseum/openaccess/raw/master/MetObjects.csv</code></pre>
 
-            <p><strong>REST API:</strong> for one-off lookups or live queries. No API key.</p>
-            <pre><code># List all object IDs (paginated, ~492k total)
+            <p>For one-off lookups or live queries, hit the REST API directly. No key, no auth, just curl:</p>
+            <pre><code># List all object IDs (about 492,000 of them)
 curl https://collectionapi.metmuseum.org/public/collection/v1/objects
 
 # Fetch a single object — Van Gogh's "Wheat Field with Cypresses"
@@ -118,10 +118,10 @@ curl https://collectionapi.metmuseum.org/public/collection/v1/objects/436535
 # Search for "Vermeer"
 curl "https://collectionapi.metmuseum.org/public/collection/v1/search?q=vermeer"</code></pre>
 
-            <p><strong>API docs:</strong> <a href="https://metmuseum.github.io/">metmuseum.github.io</a></p>
+            <p>Full API docs live at <a href="https://metmuseum.github.io/">metmuseum.github.io</a>.</p>
 
-            <h3>A sample record</h3>
-            <p>Here's a trimmed JSON response for object 436535:</p>
+            <h3>What a record looks like</h3>
+            <p>Here's a trimmed version of what comes back for that Van Gogh:</p>
             <pre><code>{
   "objectID": 436535,
   "isPublicDomain": true,
@@ -140,22 +140,16 @@ curl "https://collectionapi.metmuseum.org/public/collection/v1/search?q=vermeer"
   "GalleryNumber": "822"
 }</code></pre>
 
-            <h3>What people have built with it</h3>
-            <ul class="body">
-                <li>Google Arts &amp; Culture's high-resolution zoom interfaces ingest Met images directly.</li>
-                <li>Researchers have used the dataset for studies on color trends across centuries, geographic provenance of objects, and gender representation among catalogued artists.</li>
-                <li>Generative artists have built training pipelines on the public-domain image subset.</li>
-                <li>Hobby visualizations include <em>every Met object plotted on a map by its culture's origin</em>, and a <em>year-by-year timeline of acquisition</em>.</li>
-                <li>Educational tools that mix Met records with Wikidata to enrich artist biographies.</li>
-            </ul>
+            <h3>What people have done with it</h3>
+            <p>Google Arts &amp; Culture ingests Met images for its zoom-deep viewers. Researchers have used the dataset to study how colour palettes shifted across centuries, the geographic provenance of catalogued objects, and gender representation among named artists. Generative-art projects train on the public-domain image subset. Hobbyists have plotted every Met object on a world map by its culture's origin and built timelines of acquisition year by year. The dataset gets paired with Wikidata to fill in the often-thin artist biographies. There's plenty of room left for new ideas — most of the collection's quieter corners haven't been visualised yet.</p>
 
-            <h3>Worth knowing</h3>
+            <h3>A few gotchas before you dive in</h3>
             <ul class="body">
-                <li>Not every record has an image — "is public domain" and "has primary image" are separate columns. Filter on both.</li>
-                <li>The CSV updates weekly; the GitHub repo is the source of truth.</li>
-                <li>Some fields are highly sparse (e.g., <code>Artist Wikidata URL</code> exists but is often blank).</li>
-                <li>Object dimensions are free-text, not numeric — parsing requires regex if you want comparable numbers.</li>
-                <li>The Met's API does not return image binaries themselves; the JSON includes URLs to images hosted on <code>images.metmuseum.org</code>.</li>
+                <li>Not every record has an image. "Public domain" and "has primary image" are separate columns — filter on both, or you'll get a lot of empty image URLs.</li>
+                <li>The CSV is updated weekly. The GitHub repo is the source of truth — don't rely on third-party mirrors.</li>
+                <li>Some fields are very sparse. <code>Artist Wikidata URL</code> exists as a column but is blank more often than not.</li>
+                <li>Object dimensions are free-text, not numeric. You'll need a bit of regex if you want comparable measurements.</li>
+                <li>The API returns image URLs, not image bytes. Fetch those separately from <code>images.metmuseum.org</code>.</li>
             </ul>
 
             <div class="sources">
@@ -170,7 +164,7 @@ curl "https://collectionapi.metmuseum.org/public/collection/v1/search?q=vermeer"
         </article>
 
         <footer>
-            <p><a href="/">&larr; Back to all datasets</a></p>
+            <p><a href="/">&larr; Back to the list</a></p>
         </footer>
     </div>
 </body>
