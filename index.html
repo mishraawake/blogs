@@ -3,10 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blogs</title>
+    <title>Weird Data Collections — unusual, top-level public datasets</title>
+    <meta name="description" content="A curated directory of unusual, top-level public data collections: museum APIs, particle physics archives, biodiversity records, news event graphs, and more.">
+    <style>
+        :root {
+            --ink: #1a1a1a;
+            --muted: #5e6772;
+            --accent: #b53a2c;
+            --rule: #e5e5e5;
+            --bg: #fafaf7;
+            --card: #ffffff;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 17px;
+            line-height: 1.55;
+            color: var(--ink);
+            background: var(--bg);
+        }
+        .wrap { max-width: 820px; margin: 0 auto; padding: 56px 24px 96px; }
+        header { border-bottom: 1px solid var(--rule); padding-bottom: 28px; margin-bottom: 36px; }
+        h1 { font-size: 2.1rem; margin: 0 0 8px; letter-spacing: -0.01em; }
+        h1 .accent { color: var(--accent); }
+        .tagline { color: var(--muted); margin: 0; max-width: 60ch; }
+        h2 {
+            font-size: 1.15rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--muted);
+            margin: 40px 0 14px;
+            font-weight: 600;
+        }
+        ul.collections { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+        ul.collections li {
+            background: var(--card);
+            border: 1px solid var(--rule);
+            border-radius: 8px;
+            padding: 14px 18px;
+            transition: border-color 0.15s ease, transform 0.15s ease;
+        }
+        ul.collections li:hover { border-color: var(--accent); }
+        ul.collections a {
+            color: var(--ink);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        ul.collections a:hover { color: var(--accent); }
+        ul.collections .desc {
+            display: block;
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-top: 2px;
+        }
+        ul.collections .host {
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-size: 0.78rem;
+            color: var(--muted);
+            margin-left: 6px;
+        }
+        footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--rule);
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        footer a { color: var(--muted); }
+    </style>
 </head>
 <body>
-    <h1>Blogs</h1>
-    <p>Placeholder page. Content coming soon.</p>
+    <div class="wrap">
+        <header>
+            <h1>Weird <span class="accent">Data</span> Collections</h1>
+            <p class="tagline">A curated directory of unusual, top-level public datasets — the kind you'd never find via a generic search, but which power surprising work once you know they exist.</p>
+        </header>
+
+        <h2>Museums &amp; Cultural Heritage</h2>
+        <ul class="collections">
+            <li><a href="https://github.com/metmuseum/openaccess">Met Museum Open Access</a><span class="host">github.com/metmuseum</span><span class="desc">Every artwork in the Metropolitan Museum's collection, full metadata, released as CC0.</span></li>
+            <li><a href="https://www.si.edu/openaccess">Smithsonian Open Access</a><span class="host">si.edu</span><span class="desc">4.5M items across 21 museums and the National Zoo, all CC0 — paintings, fossils, spacecraft components.</span></li>
+            <li><a href="https://data.rijksmuseum.nl/">Rijksmuseum API</a><span class="host">data.rijksmuseum.nl</span><span class="desc">High-resolution scans and metadata for Vermeer, Rembrandt, and 700,000 other Dutch artifacts.</span></li>
+            <li><a href="https://github.com/MuseumofModernArt/collection">MoMA Collection</a><span class="host">github.com/MuseumofModernArt</span><span class="desc">MoMA's entire artwork + artist database, published as JSON and CSV in a public Git repo.</span></li>
+        </ul>
+
+        <h2>Science &amp; Earth</h2>
+        <ul class="collections">
+            <li><a href="https://opendata.cern.ch/">CERN Open Data</a><span class="host">opendata.cern.ch</span><span class="desc">Actual particle collision events from the Large Hadron Collider — the same data physicists publish papers from.</span></li>
+            <li><a href="https://www.gbif.org/">GBIF</a><span class="host">gbif.org</span><span class="desc">2.6 billion species occurrence records — every documented sighting of every catalogued organism on Earth.</span></li>
+            <li><a href="https://earthquake.usgs.gov/earthquakes/feed/">USGS Earthquake Feed</a><span class="host">earthquake.usgs.gov</span><span class="desc">Every earthquake worldwide, streamed as JSON within minutes of detection.</span></li>
+            <li><a href="https://data.nasa.gov/">NASA Open Data Portal</a><span class="host">data.nasa.gov</span><span class="desc">Telemetry, planetary imagery, exoplanet catalogs, and several thousand more datasets from every NASA mission.</span></li>
+        </ul>
+
+        <h2>Web, Language &amp; Knowledge</h2>
+        <ul class="collections">
+            <li><a href="https://commoncrawl.org/">Common Crawl</a><span class="host">commoncrawl.org</span><span class="desc">Petabytes of the open web, re-crawled monthly — the corpus most modern language models start from.</span></li>
+            <li><a href="https://www.wikidata.org/">Wikidata</a><span class="host">wikidata.org</span><span class="desc">A structured knowledge graph linking every Wikipedia article — queryable via SPARQL, downloadable in full.</span></li>
+            <li><a href="https://archive.org/details/web">Internet Archive</a><span class="host">archive.org</span><span class="desc">Books, audio, video, software, and a near-complete archive of the public web going back to 1996.</span></li>
+            <li><a href="https://www.gutenberg.org/">Project Gutenberg</a><span class="host">gutenberg.org</span><span class="desc">Full text of 70,000+ public-domain books, downloadable as plain text and EPUB.</span></li>
+        </ul>
+
+        <h2>Society, Maps &amp; Records</h2>
+        <ul class="collections">
+            <li><a href="https://www.gdeltproject.org/">GDELT</a><span class="host">gdeltproject.org</span><span class="desc">Every news event happening anywhere on the planet, tagged by actor, location, and tone — updated every 15 minutes.</span></li>
+            <li><a href="https://opencorporates.com/">OpenCorporates</a><span class="host">opencorporates.com</span><span class="desc">The largest open database of registered companies and their ownership, across 140+ jurisdictions.</span></li>
+            <li><a href="https://ourworldindata.org/">Our World in Data</a><span class="host">ourworldindata.org</span><span class="desc">Long-run development data — life expectancy since 1543, energy use since 1800, every metric carefully cited.</span></li>
+            <li><a href="https://planet.openstreetmap.org/">OpenStreetMap Planet</a><span class="host">planet.openstreetmap.org</span><span class="desc">The full vector map of Earth as a 150 GB file — every road, building, and bench on the planet.</span></li>
+        </ul>
+
+        <h2>Curious &amp; Specialized</h2>
+        <ul class="collections">
+            <li><a href="http://millionsongdataset.com/">Million Song Dataset</a><span class="host">millionsongdataset.com</span><span class="desc">Audio features and metadata for one million contemporary tracks — tempo, key, danceability, no audio itself.</span></li>
+            <li><a href="https://github.com/the-pudding/data">The Pudding Data</a><span class="host">github.com/the-pudding</span><span class="desc">Source datasets behind The Pudding's visual essays — hip-hop vocabularies, film dialogue gender splits, more.</span></li>
+            <li><a href="https://ourairports.com/data/">Our Airports</a><span class="host">ourairports.com</span><span class="desc">Every airport, heliport, and seaplane base on Earth — 79,000 rows, CSV, kept current by volunteers.</span></li>
+            <li><a href="https://www.davidrumsey.com/">David Rumsey Map Collection</a><span class="host">davidrumsey.com</span><span class="desc">100,000+ historic maps from the 16th century onward, high-res scans with full metadata.</span></li>
+        </ul>
+
+        <footer>
+            <p>Inclusion criterion: the dataset must be (1) freely downloadable or query-able, (2) genuinely top-level, not a sliver of someone else's archive, and (3) hard to stumble onto from a generic search. Suggestions welcome.</p>
+        </footer>
+    </div>
 </body>
 </html>
