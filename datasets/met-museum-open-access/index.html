@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Met Museum Open Access — Every Artwork as CC0 Data | Weird Data Collections</title>
+    <meta name="description" content="The Metropolitan Museum of Art's Open Access dataset: ~492,000 artworks with full metadata and high-resolution images, released as CC0. Download the CSV, query the API, see sample records.">
+    <link rel="canonical" href="https://wierddatacollections.com/datasets/met-museum-open-access/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#b53a2c">
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="/styles.css">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Weird Data Collections">
+    <meta property="og:title" content="Met Museum Open Access — Every Artwork as CC0 Data">
+    <meta property="og:description" content="Nearly half a million artworks with full metadata and high-res images, released as CC0. How to download and query the dataset.">
+    <meta property="og:url" content="https://wierddatacollections.com/datasets/met-museum-open-access/">
+    <meta property="og:image" content="https://wierddatacollections.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Met Museum Open Access — Every Artwork as CC0 Data">
+    <meta name="twitter:description" content="Nearly half a million artworks with full metadata and high-res images, released as CC0.">
+    <meta name="twitter:image" content="https://wierddatacollections.com/og-image.png">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Dataset",
+        "name": "The Metropolitan Museum of Art Open Access",
+        "alternateName": "Met Museum Open Access",
+        "description": "Metadata and image rights for nearly half a million objects in the Metropolitan Museum of Art's collection, released into the public domain under CC0.",
+        "url": "https://www.metmuseum.org/art/collection",
+        "sameAs": "https://github.com/metmuseum/openaccess",
+        "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "isAccessibleForFree": true,
+        "creator": {
+            "@type": "Organization",
+            "name": "The Metropolitan Museum of Art",
+            "url": "https://www.metmuseum.org/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "The Metropolitan Museum of Art"
+        },
+        "keywords": ["art", "museum", "open access", "public domain", "metadata", "CC0", "cultural heritage"],
+        "distribution": [
+            {
+                "@type": "DataDownload",
+                "encodingFormat": "text/csv",
+                "contentUrl": "https://github.com/metmuseum/openaccess/raw/master/MetObjects.csv"
+            },
+            {
+                "@type": "DataDownload",
+                "encodingFormat": "application/json",
+                "contentUrl": "https://collectionapi.metmuseum.org/public/collection/v1/objects"
+            }
+        ],
+        "variableMeasured": [
+            "Object ID", "Department", "Object Name", "Title", "Culture",
+            "Period", "Dynasty", "Reign", "Artist Display Name", "Artist Nationality",
+            "Object Begin Date", "Object End Date", "Medium", "Dimensions",
+            "Credit Line", "Geography Type", "City", "State", "Country", "Region"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Weird Data Collections", "item": "https://wierddatacollections.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Met Museum Open Access", "item": "https://wierddatacollections.com/datasets/met-museum-open-access/" }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <nav class="crumb">
+            <a href="/">Weird Data Collections</a> &rsaquo; <span>Met Museum Open Access</span>
+        </nav>
+
+        <article>
+            <h1>Met Museum Open Access</h1>
+            <p class="subtitle">The Metropolitan Museum of Art's entire collection — ~492,000 objects, full metadata, high-resolution images — released to the public domain.</p>
+
+            <table class="facts">
+                <tr><th>Maintained by</th><td>The Metropolitan Museum of Art</td></tr>
+                <tr><th>Released</th><td>February 2017 (continuously updated)</td></tr>
+                <tr><th>Size</th><td>~492,000 object records; CSV file ~290 MB</td></tr>
+                <tr><th>License</th><td>CC0 1.0 Universal (public domain dedication)</td></tr>
+                <tr><th>Formats</th><td>CSV (bulk), JSON (per-object via REST API)</td></tr>
+                <tr><th>Includes images?</th><td>Yes — for the public-domain subset (about 80% of objects)</td></tr>
+                <tr><th>API rate limit</th><td>80 requests / second, no auth required</td></tr>
+            </table>
+
+            <h3>What's in it</h3>
+            <p>Every catalogued object in the Met's collection — paintings, sculpture, textiles, weapons, musical instruments, photographs, drawings, prints, costumes, decorative arts — exposed as a structured record. Each row has more than 50 fields: object ID, title, culture, period, artist, medium, dimensions, credit line, geographic origin, and where in the museum it lives. For roughly 80% of objects flagged "Public Domain," the full-resolution image is also released as CC0 and can be downloaded and reused without attribution.</p>
+
+            <h3>Why it's unusual</h3>
+            <p>Most museum APIs are partial, watermark images, or restrict re-use. The Met went the other direction: full collection, full metadata, full-resolution images, no attribution required, no commercial restriction. The CSV is a flat file you can grep. The API is unauthenticated. The license is the strongest open license that exists. For a 150-year-old institution holding objects valued in the billions, that's a uniquely radical commitment to open data.</p>
+
+            <h3>How to access</h3>
+            <p><strong>Bulk download (CSV):</strong> the canonical source is the <a href="https://github.com/metmuseum/openaccess">metmuseum/openaccess</a> repo on GitHub. Clone or download:</p>
+            <pre><code>curl -O https://github.com/metmuseum/openaccess/raw/master/MetObjects.csv</code></pre>
+
+            <p><strong>REST API:</strong> for one-off lookups or live queries. No API key.</p>
+            <pre><code># List all object IDs (paginated, ~492k total)
+curl https://collectionapi.metmuseum.org/public/collection/v1/objects
+
+# Fetch a single object — Van Gogh's "Wheat Field with Cypresses"
+curl https://collectionapi.metmuseum.org/public/collection/v1/objects/436535
+
+# Search for "Vermeer"
+curl "https://collectionapi.metmuseum.org/public/collection/v1/search?q=vermeer"</code></pre>
+
+            <p><strong>API docs:</strong> <a href="https://metmuseum.github.io/">metmuseum.github.io</a></p>
+
+            <h3>A sample record</h3>
+            <p>Here's a trimmed JSON response for object 436535:</p>
+            <pre><code>{
+  "objectID": 436535,
+  "isPublicDomain": true,
+  "primaryImage": "https://images.metmuseum.org/.../DT1567.jpg",
+  "department": "European Paintings",
+  "objectName": "Painting",
+  "title": "Wheat Field with Cypresses",
+  "culture": "",
+  "period": "",
+  "artistDisplayName": "Vincent van Gogh",
+  "artistNationality": "Dutch",
+  "objectDate": "1889",
+  "medium": "Oil on canvas",
+  "dimensions": "28 7/8 x 36 3/4 in. (73.2 x 93.4 cm)",
+  "creditLine": "Purchase, The Annenberg Foundation Gift, 1993",
+  "GalleryNumber": "822"
+}</code></pre>
+
+            <h3>What people have built with it</h3>
+            <ul class="body">
+                <li>Google Arts &amp; Culture's high-resolution zoom interfaces ingest Met images directly.</li>
+                <li>Researchers have used the dataset for studies on color trends across centuries, geographic provenance of objects, and gender representation among catalogued artists.</li>
+                <li>Generative artists have built training pipelines on the public-domain image subset.</li>
+                <li>Hobby visualizations include <em>every Met object plotted on a map by its culture's origin</em>, and a <em>year-by-year timeline of acquisition</em>.</li>
+                <li>Educational tools that mix Met records with Wikidata to enrich artist biographies.</li>
+            </ul>
+
+            <h3>Worth knowing</h3>
+            <ul class="body">
+                <li>Not every record has an image — "is public domain" and "has primary image" are separate columns. Filter on both.</li>
+                <li>The CSV updates weekly; the GitHub repo is the source of truth.</li>
+                <li>Some fields are highly sparse (e.g., <code>Artist Wikidata URL</code> exists but is often blank).</li>
+                <li>Object dimensions are free-text, not numeric — parsing requires regex if you want comparable numbers.</li>
+                <li>The Met's API does not return image binaries themselves; the JSON includes URLs to images hosted on <code>images.metmuseum.org</code>.</li>
+            </ul>
+
+            <div class="sources">
+                <h3>Sources</h3>
+                <ul>
+                    <li><a href="https://www.metmuseum.org/about-the-met/policies-and-documents/open-access">Met Museum Open Access policy page</a></li>
+                    <li><a href="https://github.com/metmuseum/openaccess">metmuseum/openaccess (CSV repository)</a></li>
+                    <li><a href="https://metmuseum.github.io/">Collection API documentation</a></li>
+                    <li><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0 license text</a></li>
+                </ul>
+            </div>
+        </article>
+
+        <footer>
+            <p><a href="/">&larr; Back to all datasets</a></p>
+        </footer>
+    </div>
+</body>
+</html>
